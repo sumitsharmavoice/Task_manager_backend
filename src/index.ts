@@ -7,6 +7,8 @@ import taskRoutes from "./routes/taskroutes";
 
 dotenv.config();
 
+const PORT = process.env.PORT || 5197;
+
 const app = express();
 
 app.use(cors());
@@ -20,6 +22,6 @@ app.get("/", (req, res) => {
   res.send("API running...");
 });
 
-app.listen(5197, () => {
-  console.log("Server running on port 5197");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
