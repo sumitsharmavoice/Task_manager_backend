@@ -7,6 +7,10 @@ const express_1 = __importDefault(require("express"));
 const task_controller_1 = require("../controllers/task.controller");
 const auth_middleware_1 = require("../middleware/auth.middleware");
 const router = express_1.default.Router();
-router.post("/", auth_middleware_1.authMiddleware, task_controller_1.createTask);
 router.get("/", auth_middleware_1.authMiddleware, task_controller_1.getTasks);
+router.post("/", auth_middleware_1.authMiddleware, task_controller_1.createTask);
+router.get("/:id", auth_middleware_1.authMiddleware, task_controller_1.getTaskById);
+router.patch("/:id", auth_middleware_1.authMiddleware, task_controller_1.updateTask);
+router.delete("/:id", auth_middleware_1.authMiddleware, task_controller_1.deleteTask);
+router.patch("/:id/toggle", auth_middleware_1.authMiddleware, task_controller_1.toggleTask); // ← was missing
 exports.default = router;
