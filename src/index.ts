@@ -7,11 +7,16 @@ import taskRoutes from "./routes/taskroutes";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 5197;
+const PORT = Number(process.env.PORT || 5197);
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 app.use(express.json());
 
 app.use("/auth", authRoutes);
@@ -22,6 +27,6 @@ app.get("/", (req, res) => {
   res.send("API running...");
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
