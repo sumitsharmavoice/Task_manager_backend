@@ -13,7 +13,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://taskmanagerfrontend-eta.vercel.app/",
+    origin: "https://taskmanagerfrontend-eta.vercel.app",
     credentials: true
   })
 );
