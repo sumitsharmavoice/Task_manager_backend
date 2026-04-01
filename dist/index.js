@@ -13,6 +13,7 @@ const PORT = Number(process.env.PORT || 5197);
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
     origin: "https://taskmanagerfrontend-eta.vercel.app/",
+    credentials: true
 }));
 app.use(express_1.default.json());
 app.use("/auth", auth_routes_1.default);

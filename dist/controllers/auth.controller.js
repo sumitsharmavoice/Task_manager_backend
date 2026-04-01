@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.login = exports.register = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const client_1 = require("@prisma/client");
+const client_1 = require("../generated/prisma/client");
 const jwt_1 = require("../utils/jwt");
 const prisma = new client_1.PrismaClient();
 const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
